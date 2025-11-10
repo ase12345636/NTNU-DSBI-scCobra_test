@@ -6,8 +6,11 @@ from utils import metrics
 import os
 import pandas as pd
 
+import os
+os.environ["LD_PRELOAD"] = "/usr/lib/x86_64-linux-gnu/libstdc++.so.6"
+
 data = "/Group16T/raw_data/scCobra/Immune_ALL_human.h5ad"
-out_path = "/Group16T/common/ccuc/scCobra/result/immune/"
+out_path = "/Group16T/common/ccuc/scCobra_test/result/immune/"
 batch = 'batch'
 celltype = 'final_annotation'
 adata = filter_cells_type1(data)
@@ -54,7 +57,7 @@ combined = combined.join(res_df, how='outer')
 combined.to_csv(metrics_csv)
 
 data = "/Group16T/raw_data/scCobra/Lung_atlas_public.h5ad"
-out_path = "/Group16T/common/ccuc/scCobra/result/lung/"
+out_path = "/Group16T/common/ccuc/scCobra_test/result/lung/"
 batch = 'batch'
 celltype = 'cell_type'
 adata = filter_cells_type1(data)
@@ -96,7 +99,7 @@ combined.to_csv(metrics_csv)
 
 
 data = "/Group16T/raw_data/scCobra/human_pancreas_norm_complexBatch.h5ad"
-out_path = "/Group16T/common/ccuc/scCobra/result/pancreas/"
+out_path = "/Group16T/common/ccuc/scCobra_test/result/pancreas/"
 batch = 'tech'
 celltype = 'celltype'
 adata = filter_cells_type1(data)

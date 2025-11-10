@@ -253,6 +253,3 @@ def evaluate_dataset(adata_integrated,method="louvain1.0",n_celltype=10):
     result= pd.DataFrame.from_dict(results, orient='index')
     result.columns=[method]
     return adata_integrated,result
-
-
-

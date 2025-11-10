@@ -43,3 +43,20 @@ pip install harmony-pytorch
 ```
 pip install scvi-tools
 ```
+
+### Metric
+From scDML github.<br>
+https://github.com/eleozzr/scDML<br>
+under scDML/scDML<br>
+Need to download three file
+- batchKL.R
+- calLISI.R
+- metric.py
+
+System need R language package.
+
+In my work, I need to delete some lib in conda.
+```
+cd /Group16T/common/ccuc/miniconda3/envs/sctools/lib
+mv libstdc++.so.6 libstdc++.so.6.bak
+```
