@@ -13,4 +13,9 @@ def Harmony(adata, out_path, batch, celltype):
         batch_key=batch,
     )
 
+    # standardize embedding key for metrics
+    adata.obsm['X_emb'] = adata.obsm['X_pca_harmony']
+
     plot(adata, "X_pca_harmony", batch , celltype, out_path)
+    return adata
+
