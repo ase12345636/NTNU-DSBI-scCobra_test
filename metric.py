@@ -18,10 +18,11 @@ def evaluate_from_embeddings(
 	emb_files = sorted(glob.glob(os.path.join(out_path, pattern)))
 
 	combined_df = pd.DataFrame()
-	
-	adata = preprocess.filter_cells_type1(data)
 
+	adata = preprocess.filter_cells_type1(data)
+	
 	for emb_path in emb_files:
+
 		method_name = os.path.basename(emb_path).replace("_emb.npy", "")
 
 		adata.obs['celltype'] = adata.obs[celltype]

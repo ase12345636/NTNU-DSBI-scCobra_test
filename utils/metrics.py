@@ -151,7 +151,7 @@ def find_resolution(adata_, n_clusters, random):
 
 
 def calulate_ari_nmi(adata_integrated, n_cluster=4):
-    sc.pp.neighbors(adata_integrated, random_state=0)
+    sc.pp.neighbors(adata_integrated, use_rep="X_emb",random_state=0)
     reso = find_resolution(adata_integrated, n_cluster, 0)
     sc.tl.louvain(adata_integrated, reso, random_state=0)
     sc.tl.umap(adata_integrated)

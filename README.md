@@ -53,7 +53,12 @@ Need to download three file
 - calLISI.R
 - metric.py
 
-System need R language package.
+System need R language package amd install some R package
+```
+install.packages(c("nabor", "FNN", "Rcpp"), repos="http://cran.us.r-project.org")
+install.packages("remotes", repos="http://cran.us.r-project.org")
+remotes::install_github("immunogenomics/LISI")
+```
 
 In my work, I need to delete some lib in conda.
 ```
